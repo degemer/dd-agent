@@ -222,8 +222,7 @@ class TestCore(unittest.TestCase):
 
 
     def test_min_collection_interval(self):
-        if os.environ.get('TRAVIS', False):
-            raise SkipTest('ntp server times out too often on Travis')
+        raise SkipTest('ntp server times out too often on Travis')
         config = {'instances': [{'host': '0.amazon.pool.ntp.org', 'timeout': 1}], 'init_config': {}}
 
         agentConfig = {
